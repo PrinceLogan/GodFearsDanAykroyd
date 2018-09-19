@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<h1>{% for Gods_Name in list_active_gods %}</h1>
+{{ Gods_Name }}
+{% endfor %}
+<form action="/new" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

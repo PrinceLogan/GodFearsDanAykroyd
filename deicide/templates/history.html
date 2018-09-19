@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="historylist">
+<h2><style="text-align: center;">GODS//ACCUSATION</h2>
+<ol><style="text-align: center;">{% for Accusation in history_active_gods %}
+<li>{{ Accusation }}</li>
+{% endfor %}
+</ol></div>
+{% endblock %}

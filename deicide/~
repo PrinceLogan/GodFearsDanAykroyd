@@ -1,0 +1,20 @@
+import smtplib
+import sqlite3
+import schedule
+import time
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+me = "lojoho@gmail.com"
+you = "logan@bringg.com"
+sqlite_file = '/home/lojoho/mozillaDjango/db.sqlite3'    # name of the sqlite database file
+
+conn = sqlite3.connect(sqlite_file)
+c = conn.cursor()
+
+c.execute('select count() from deicide_deicidelist')
+count_results = c.fetchall()
+print(count_results)
+
+conn.close()

@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<div class="form">
+</br>
+<form style="text-align: center;" action="/new" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
+</div>
+<div class="list">
+<h4>Crimes we are reporting to Dan Akroid</h4>
+<ol>{% for Accusation in list_active_gods %}
+<li>{{ Accusation }}</li>
+{% endfor %}
+</ol></div>
+{% endblock %}
